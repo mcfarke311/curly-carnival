@@ -9,6 +9,17 @@ footer a {
     text-decoration: none;
 }
 
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links img {
+    width: 5em;
+    height: 5em;
+}
+
 .copyright-notice {
     text-align: center;
     padding: 1em 0;
