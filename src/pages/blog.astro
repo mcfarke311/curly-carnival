@@ -1,25 +1,55 @@
 ---
-const pageTitle = "My Astro Learning Blog";
----
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width" />
-    <title>Astro</title>
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-    <a href="/links/">Links</a>
-    <a href="/now/">Now</a>
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/blog.css';
 
-    <h1>{pageTitle}</h1>
-    <p>This is where I will post about my journey learning Astro.</p>
-    <ul>
-      <li><a href="/posts/post-1/">Post 1</a></li>
-      <li><a href="/posts/post-2/">Post 2</a></li>
-      <li><a href="/posts/post-3/">Post 3</a></li>
+const pageTitle = "Blog";
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const allTags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="blog-page">
+    <div class="blog-search">
+      <input type="text" placeholder="Search posts..." />
+    </div>
+
+    {allTags.length > 0 && (
+      <div class="blog-tags">
+        {allTags.map((tag) => (
+          <button class="blog-tag" data-tag={tag}>{tag}</button>
+        ))}
+      </div>
+    )}
+
+    <ul class="post-list">
+      {posts.map((post) => {
+        const date = new Date(post.data.pubDate).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        });
+        return (
+          <li class="post-item" data-title={post.data.title.toLowerCase()} data-tags={post.data.tags.join(',')}>
+            <a href={`/blog/${post.id}/`} class="post-link">
+              <span class="post-date">{date}</span>
+              <span class="post-title">{post.data.title}</span>
+            </a>
+            {post.data.tags.length > 0 && (
+              <div class="post-tags-inline">{post.data.tags.join(', ')}</div>
+            )}
+          </li>
+        );
+      })}
     </ul>
-  </body>
-</html>
+
+    <p class="no-results" style="display: none;">No posts found.</p>
+  </div>
+
+  <script>
+    import "../scripts/blog.js";
+  </script>
+</BaseLayout>

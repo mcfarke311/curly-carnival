@@ -1,22 +1,70 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home Page";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
-        <a href="/links/">Links</a>
-        <a href="/now/">Now</a>
-		<h1>{pageTitle}</h1>
-	</body>
-</html>
+<BaseLayout>
+  <h2>My awesome blog subtitle</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id rutrum arcu.
+    Donec laoreet libero quis commodo lacinia. Etiam finibus elementum
+    scelerisque. Ut ultricies, lacus a dapibus rhoncus, lorem purus bibendum
+    lectus, a porttitor metus enim eget metus. Morbi neque dui, mattis eget
+    eleifend eget, aliquet et lorem. Morbi finibus ac arcu non hendrerit. Sed
+    non accumsan dui. Maecenas aliquam tincidunt lacus, sed pretium lectus
+    gravida eget. Fusce vel lacus et enim auctor congue. Maecenas pharetra dui
+    vulputate, mattis mi eget, laoreet ligula. Nullam ultricies scelerisque
+    neque sed aliquet. Praesent ac erat pharetra, fringilla lorem ac, malesuada
+    sapien. Vivamus luctus mauris sit amet congue sodales. Etiam pharetra odio
+    et fringilla malesuada. Etiam sed risus gravida, tincidunt felis aliquam,
+    mollis urna.
+  </p>
+  <p>
+    Integer mattis eu dui non pulvinar. Cras ultrices euismod tincidunt.
+    Pellentesque eu euismod diam. Vestibulum scelerisque orci sit amet eros
+    porttitor cursus. Mauris elementum libero in vestibulum commodo. Phasellus
+    at lacinia orci, malesuada ultricies libero. Aliquam erat volutpat.
+    Suspendisse sollicitudin dictum sapien pretium pharetra. Curabitur efficitur
+    augue non dolor auctor, convallis sagittis augue iaculis. Mauris a accumsan
+    ipsum. Nulla placerat imperdiet lectus vel laoreet. Sed auctor pellentesque
+    orci, ut pretium dolor lacinia vel. Vivamus sed tortor id ligula accumsan
+    vestibulum eget sit amet est. Integer in mauris massa.
+  </p>
+
+  <p>
+    Integer a leo in nisi gravida convallis eget vitae sem. Fusce sed venenatis
+    mi. Curabitur sed nisi nec libero porttitor pretium quis ac lacus. Nullam
+    facilisis nulla nec blandit pulvinar. Aenean at nibh nibh. Curabitur a
+    sagittis nisl. Aenean lorem ligula, placerat ultricies bibendum congue,
+    cursus ut augue. Morbi nec fringilla sapien, ac efficitur enim. Sed nec
+    lacinia elit. Fusce pharetra mauris quis tortor volutpat, vitae tincidunt
+    nibh mattis. Maecenas bibendum libero sit amet urna laoreet, ut pharetra
+    augue vehicula. Mauris placerat velit vel sem tempor vestibulum vitae a
+    augue. Nam maximus elementum euismod.
+  </p>
+
+  <p>
+    Nam aliquet bibendum odio rutrum ultricies. Quisque fringilla, magna in
+    convallis semper, lectus nibh viverra ipsum, a tempus lacus quam quis augue.
+    Curabitur eleifend dictum neque, et sagittis mauris ullamcorper ac. Quisque
+    ac urna rutrum nisl dapibus ornare a eget tellus. Quisque luctus nisl ex,
+    sed bibendum nunc pulvinar vitae. Vivamus congue ipsum vitae consequat
+    iaculis. Donec faucibus at massa ac ullamcorper. Praesent lacus neque,
+    vehicula euismod tincidunt sed, consectetur ac lorem. Ut lacinia, urna ut
+    volutpat vulputate, felis ante lobortis mauris, nec aliquet quam ante sed
+    velit. Aenean pharetra nulla id ultricies aliquam. Vestibulum eget tellus at
+    sem faucibus pharetra et quis velit. In hac habitasse platea dictumst.
+  </p>
+
+  <p>
+    Donec nulla dolor, maximus vitae mi at, pellentesque malesuada sapien.
+    Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec pharetra
+    vulputate euismod. Sed mollis pellentesque hendrerit. In leo mauris, dictum
+    vel nunc ut, imperdiet luctus turpis. Donec sapien justo, commodo vel diam
+    nec, fringilla venenatis metus. Mauris facilisis mauris vel gravida maximus.
+    Cras et metus id mauris tristique fermentum. Phasellus pellentesque massa
+    sed posuere consectetur. Donec tempor sollicitudin risus, ut malesuada mi
+    pulvinar in. Donec ut mi metus. Mauris interdum gravida lectus quis rutrum.
+    Curabitur aliquet lacus non orci pretium suscipit eu nec nibh.
+  </p>
+</BaseLayout>

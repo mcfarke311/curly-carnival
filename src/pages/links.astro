@@ -1,22 +1,54 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/links.css";
 
+const pageTitle = "Links";
+
+const categories = [
+  {
+    name: "Listening",
+    links: [
+      { title: "Album Title", url: "https://music.apple.com/...", image: "https://is1-ssl.mzstatic.com/...jpg", subtitle: "Artist Name" },
+    ]
+  },
+  {
+    name: "Watching",
+    links: [
+      { title: "Show or Movie", url: "https://www.imdb.com/...", image: "https://image.tmdb.org/...jpg", subtitle: "Where to watch" },
+    ]
+  },
+  {
+    name: "Reading",
+    links: [
+      { title: "Book Title", url: "https://www.goodreads.com/...", image: "https://images-na.ssl-images-amazon.com/...jpg", subtitle: "Author Name" },
+    ]
+  },
+  {
+    name: "Recommending",
+    links: [
+      { title: "Product or Service", url: "https://...", image: "https://...jpg", subtitle: "Why it's great" },
+    ]
+  }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
-        <a href="/links/">Links</a>
-        <a href="/now/">Now</a>
-		<h1>My Astro Site</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <div class="links-page">
+    {categories.map((category) => (
+      <section class="link-category">
+        <h2>{category.name}</h2>
+        <div class="link-grid">
+          {category.links.map((link) => (
+            <a href={link.url} target="_blank" rel="noopener" class="link-card">
+              <img src={link.image} alt={link.title} class="link-card-img" loading="lazy" />
+              <div class="link-card-body">
+                <p class="link-card-title">{link.title}</p>
+                {link.subtitle && <p class="link-card-subtitle">{link.subtitle}</p>}
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</BaseLayout>

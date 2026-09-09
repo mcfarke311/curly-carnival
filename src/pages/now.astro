@@ -1,22 +1,54 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/now.css";
 
+const pageTitle = "Now";
+const lastUpdated = "September 2026";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
-        <a href="/links/">Links</a>
-        <a href="/now/">Now</a>
-		<h1>My Astro Site</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <div class="now-page">
+        <p>
+            This is a snapshot of what I'm focused on right now — what I'd tell a
+            friend I hadn't seen in a while.
+        </p>
+
+        <section class="now-section">
+            <h2>Working On</h2>
+            <ul>
+                <li>Building out this website with Astro</li>
+                <li>Side project using TypeScript and Node.js</li>
+                <li>Contributing to an open-source design system</li>
+            </ul>
+        </section>
+
+        <section class="now-section">
+            <h2>Learning</h2>
+            <ul>
+                <li>Rust fundamentals</li>
+                <li>System design patterns</li>
+                <li>Mechanical keyboard building</li>
+            </ul>
+        </section>
+
+        <section class="now-section">
+            <h2>Reading</h2>
+            <ul>
+                <li><em>The Pragmatic Programmer</em> by Hunt & Thomas</li>
+                <li><em>Designing Data-Intensive Applications</em> by Martin Kleppmann</li>
+                <li><em>Babel</em> by R.F. Kuang</li>
+            </ul>
+        </section>
+
+        <section class="now-section">
+            <h2>Listening</h2>
+            <ul>
+                <li><em>Brat</em> by Charli XCX</li>
+                <li><em>The Rise and Fall of Zack Hill</em> by Dean Blunt</li>
+                <li>Reply All (podcast)</li>
+            </ul>
+        </section>
+
+        <p class="now-updated">Last updated: {lastUpdated}</p>
+    </div>
+</BaseLayout>

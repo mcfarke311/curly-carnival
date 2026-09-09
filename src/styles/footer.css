@@ -1,0 +1,15 @@
+footer {
+    color: white;
+    background-color: black;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.copyright-notice {
+    text-align: center;
+    padding: 1em 0;
+}
